@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.milkimu.com" />
   <meta property="og:image" content="https://www.milkimu.com/logo1.png" />
-
+  <link rel="icon" type="image/png" href="/logo2.png" />
   <title>Milkimu</title>
   <script async src="https://cse.google.com/cse.js?cx=11e8b6566009544f7"></script>
 
@@ -210,15 +210,15 @@
 
   <section id="about">
     <div class="container section-content">
-      <h3 class="section-header mb-5">About Us</h3>
+      <h3 class="section-header mb-5">About Milkimu</h3>
       <div class="row align-items-center justify-content-center">
         <div class="col-md-6 mb-4 mb-md-0">
           <img src="/about.png" class="img-fluid rounded" alt="About Milkimu">
         </div>
         <div class="col-md-6">
-          <p>We are from Pondicherry. Our company name is Milkimu. We are dedicated to providing fresh dairy products to
-            our local community and beyond, ensuring quality and freshness every day. We aim to deliver farm-fresh milk,
-            curd, and ghee to your doorstep daily with care and excellence.</p>
+          <p>At Milkimu, we believe that every drop of milk carries the goodness of nature, tradition, and care. Our journey began with a simple vision – to bring farm-fresh, wholesome, and pure dairy products straight to your home.</p>
+          <p>From rich, creamy full-fat milk to light and healthy low-fat milk, from thick curd to golden ghee, every Milkimu product is crafted with love, quality, and authenticity. We work closely with trusted farms and ensure that our dairy goes through the highest standards of hygiene and freshness – so you and your family enjoy nothing but the best.</p>
+          <p>Milkimu isn’t just milk, it’s a part of your everyday happiness – in your morning coffee, your favorite dessert, your child’s glass of milk, and the warmth of a healthy meal shared together.</p>
         </div>
       </div>
     </div>
@@ -229,7 +229,7 @@
       <h3 class="section-header mb-5">Contact Us</h3>
       <div class="row align-items-center justify-content-center">
         <div class="col-md-6 mb-4 mb-md-0">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.866410874072!2d79.80732407597549!3d11.91438398831213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5361002866ce5b%3A0xbe833b109b9657b1!2sCapri%20group%20of%20company!5e0!3m2!1sen!2sin!4v1751857253800!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7807.730869114532!2d79.80981129999999!3d11.9144519!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5361001415ee01%3A0x19d375616ee3a568!2sCAPRI%20NEXUS%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1756534157267!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <div class="col-md-6">
@@ -239,11 +239,11 @@
             <a href="https://www.instagram.com/themilkimulife" target="_blank" class="me-3 text-dark fs-4">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.facebook.com/themilkimulife" target="_blank" class="me-3 text-dark fs-4">
-              <i class="fab fa-facebook"></i>
+            <a href="https://www.linkedin.com/company/capri-group-of-companies/posts/?feedView=all" target="_blank" class="me-3 text-dark fs-4">
+              <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://twitter.com/themilkimulife" target="_blank" class="me-3 text-dark fs-4">
-              <i class="fab fa-twitter"></i>
+            <a href="https://wa.me/919500925004" target="_blank" class="me-3 text-dark fs-4">
+              <i class="fab fa-whatsapp"></i>
             </a>
           </p>
         </div>
@@ -260,10 +260,10 @@
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll("section");
       const navLinks = document.querySelectorAll(".nav-link");
+      const headers = document.querySelectorAll(".section-header");
 
-      window.addEventListener("scroll", () => {
+      function onScroll() {
         let current = "";
-
         sections.forEach(section => {
           const sectionTop = section.offsetTop - 100;
           if (scrollY >= sectionTop) {
@@ -278,15 +278,19 @@
           }
         });
 
-        document.querySelectorAll(".section-header").forEach(header => {
+        headers.forEach(header => {
           const headerTop = header.parentElement.offsetTop - 100;
           if (scrollY >= headerTop) {
-            setTimeout(() => header.classList.add("show"), 100);
+            header.classList.add("show");
           }
         });
-      });
+      }
+
+      // Run once on load
+      onScroll();
+      // Run on scroll
+      window.addEventListener("scroll", onScroll);
     });
   </script>
 </body>
-
 </html>
